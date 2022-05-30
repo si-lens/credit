@@ -28,7 +28,7 @@ RSpec.describe Credit::Card do
   end
 
   it "Returns INVALID for invalid card number" do
-    card_numbers = [1_234_567_890, "1_234_567_890", "1_abc_567_890", "", 1, "abc", nil]
+    card_numbers = [1_234_567_890, "1_234_567_890", "1_abc_567_890", "", 1, "abc", nil, '4111111111111110']
     card_numbers.each do |card_number|
       expect(Credit::Card.new.validate(card_number)).to eq("INVALID")
     end
