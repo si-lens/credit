@@ -2,8 +2,5 @@
 
 require_relative "credit/version"
 require_relative "credit/card"
-
-module Credit
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "credit/card_validators/find_provider"
+require_relative "credit/card_validators/calculate_checksum"
