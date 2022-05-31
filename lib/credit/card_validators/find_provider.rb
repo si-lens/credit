@@ -16,7 +16,7 @@ module Credit
 
     class FindProvider
       def initialize(card_number)
-        @card_number = card_number
+        @card_number = Integer(card_number).to_s
         @card_number_length = card_number.to_s.length
       end
 

@@ -8,9 +8,11 @@ module Credit
       end
 
       def call
-        nums_array = @card_number.to_i.digits.reverse.reverse
+        nums_array = Integer(@card_number).digits.reverse.reverse
         products = nums_array.each_with_index.map { |num, i| i.odd? ? num * 2 : num }
         (sum_products_digits(products) % 10).zero?
+      rescue StandardError
+        false
       end
 
       private
